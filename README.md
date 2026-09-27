@@ -1,4 +1,4 @@
-# Birthday V2 — React Edition 🎂
+# Birthday wish 🎂
 
 A React/Vite conversion of the original sapthesh/Birthday-V2 experience.
 
