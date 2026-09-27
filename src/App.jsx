@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() =>{
 
-    const audio = new Audio("./src/audio/audio.mp3");
+const audio = new Audio(`${import.meta.env.BASE_URL}audio/audio.mp3`);
     audio.preload = 'auto';
     audio.volume = 0.25;
     audio.loop = true;
