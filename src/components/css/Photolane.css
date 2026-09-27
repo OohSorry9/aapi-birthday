@@ -1,0 +1,28 @@
+.photolane-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 24px);
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .final-step > .photolane-layout {
+        gap: 8px;
+    }
+
+    .final-step > .photolane-layout .photo-card {
+        flex: 0 1 25vw;
+        width: auto;
+        min-width: 0;
+        max-width: 100px;
+        padding: 5px 4px 10px;
+    }
+
+    .final-step > .photolane-layout .photo-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+}

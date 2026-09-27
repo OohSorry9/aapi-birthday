@@ -1,0 +1,141 @@
+
+.final-card-container {
+    animation: fadeIn 1s ease-in-out;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.greeting {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.name {
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    background-color: var(--accent-color);
+    width: 3px;
+    height: 1em;
+    vertical-align: -0.12em;
+    animation: blink 1s step-end infinite;
+    margin-left: 5px;
+}
+
+.wish-message {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(50,0,20,0.2);
+    border-radius: 10px;
+}
+
+.step.final-step{
+    position: relative;
+    inset: auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(4px, 1vh, 10px);
+    padding: clamp(4px, 1vh, 12px) 1vw;
+}
+.final-card-middle-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1.4vw, 20px);
+    width: min(100%, 1400px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.final-step .final-card-container {
+    flex: 2 1 0;
+    min-width: 0;
+    max-width: none;
+    width: 40%;
+    padding: 20px 0
+}
+
+.final-step .greeting {
+    font-size: clamp(2.5rem, 3vh, 1.8rem);
+}
+
+.final-step .name {
+    font-size: clamp(2rem, 6vh, 3.3rem);
+}
+
+.final-step .wish-message {
+    font-size: clamp(1.5rem, 1.8vh, 1.1rem);
+    line-height: 1.35;
+    /* padding: clamp(6px, 1vh, 14px); */
+}
+
+.final-step .cake {
+    transform: scale(.5);
+    transform-origin: top center;
+    margin: clamp(4px, 1vh, 10px) auto -110px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blink {
+    from, to { background-color: transparent; }
+    50% { background-color: var(--accent-color); }
+}
+
+@media (max-width: 700px) {
+    .step.final-step {
+        align-items: stretch;
+        justify-content: flex-start;
+        min-height: 100svh;
+        padding: max(12px, env(safe-area-inset-top)) 12px max(16px, env(safe-area-inset-bottom));
+        gap: 12px;
+    }
+
+    .final-card-middle-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 12px 8px;
+        width: 100%;
+    }
+
+    .final-step .final-card-container {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: 100%;
+        padding: 0;
+    }
+
+    .final-step .greeting {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+
+    .final-step .name {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+    }
+
+    .final-step .wish-message {
+        max-width: 100%;
+        padding: 12px;
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+        line-height: 1.4;
+    }
+
+    .final-step .cake {
+        transform: scale(0.38);
+        margin: 4px auto -150px;
+    }
+}

@@ -1,0 +1,115 @@
+
+
+.memory-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    width: 50%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.side-photos {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap:70px;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px 10px 30px;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.photo-card:hover {
+    transform: scale(1.5) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.photo-1 { transform: rotate(-7deg); }
+.photo-2 { transform: rotate(6deg); }
+.photo-3 { transform: rotate(7deg); }
+.photo-4 { transform: rotate(-6deg); }
+
+.final-step .memory-layout {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+}
+
+.final-step .side-photos {
+    flex-direction: column;
+    width: min(200px, 100%);
+    gap: clamp(6px, 1vh, 14px);
+}
+
+.final-step .side-photos .photo-card {
+    width: 200px;
+    padding: clamp(3px, 0.5vh, 6px) clamp(3px, 0.5vh, 6px) clamp(8px, 1.2vh, 14px);
+}
+
+.final-step .photo-card img {
+    /* height: clamp(32px, 8vh, 86px); */
+    width: 100%
+}
+
+.final-step .photo-card:hover {
+    transform: none !important;
+}
+
+@media (max-width: 700px) {
+    .final-step .memory-layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .final-step .memory-layout:first-child {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .final-step .memory-layout:last-child {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .final-step .side-photos {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .final-step .side-photos .photo-card {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        padding: 5px 4px 10px;
+    }
+
+    .final-step .photo-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+}
